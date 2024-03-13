@@ -32,3 +32,29 @@ public:
         return -1;
     }
 };
+
+
+// Binary search solution
+class Solution {
+public:
+    int pivotInteger(int n) {
+         int left = 1;
+    int right = n;
+
+    while (left <= right) {
+        int x = (left + right) / 2;
+        int leftSum = (x * (x + 1)) / 2; 
+        int rightSum = ((n * (n + 1)) / 2) - leftSum; w
+
+        if (leftSum == rightSum) {
+            return x;
+        } else if (leftSum < rightSum) {
+            left = x + 1;
+        } else {
+            right = x - 1;
+        }
+    }
+
+    return -1;
+    }
+};
